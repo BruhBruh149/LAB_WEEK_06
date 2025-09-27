@@ -13,30 +13,19 @@ private const val MALE_SYMBOL = "\u2642"
 private const val UNKNOWN_SYMBOL = "?"
 
 class CatViewHolder(
-    private val containerView: View, // Tambahkan private val di sini
+    itemView: View,
     private val imageLoader: ImageLoader,
     private val onClickListener: CatAdapter.OnClickListener
-) : RecyclerView.ViewHolder(containerView) {
+) : RecyclerView.ViewHolder(itemView) {
 
-    // Sekarang containerView bisa diakses sebagai property class
-    private val catBiographyView: TextView by lazy {
-        containerView.findViewById(R.id.cat_biography)
-    }
-    private val catBreedView: TextView by lazy {
-        containerView.findViewById(R.id.cat_breed)
-    }
-    private val catGenderView: TextView by lazy {
-        containerView.findViewById(R.id.cat_gender)
-    }
-    private val catNameView: TextView by lazy {
-        containerView.findViewById(R.id.cat_name)
-    }
-    private val catPhotoView: ImageView by lazy {
-        containerView.findViewById(R.id.cat_photo)
-    }
+    private val catBiographyView: TextView = itemView.findViewById(R.id.cat_biography)
+    private val catBreedView: TextView = itemView.findViewById(R.id.cat_breed)
+    private val catGenderView: TextView = itemView.findViewById(R.id.cat_gender)
+    private val catNameView: TextView = itemView.findViewById(R.id.cat_name)
+    private val catPhotoView: ImageView = itemView.findViewById(R.id.cat_photo)
 
     fun bindData(cat: CatModel) {
-        containerView.setOnClickListener {
+        itemView.setOnClickListener {
             onClickListener.onItemClick(cat)
         }
 
