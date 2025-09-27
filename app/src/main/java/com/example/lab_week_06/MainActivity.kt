@@ -1,4 +1,5 @@
 package com.example.lab_week_06
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.adapter = catAdapter
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        // Swipe to delete functionality
         val itemTouchHelper = ItemTouchHelper(catAdapter.swipeToDeleteCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
@@ -55,6 +58,77 @@ class MainActivity : AppCompatActivity() {
                 "Curious George",
                 "Award winning investigator",
                 "https://cdn2.thecatapi.com/images/bar.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.ExoticShorthair,
+                "Tom",
+                "Professional napper",
+                "https://cdn2.thecatapi.com/images/9u1.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.BalineseJavanese,
+                "Luna",
+                "Moonlight hunter",
+                "https://cdn2.thecatapi.com/images/bti.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.AmericanCurl,
+                "Simba",
+                "Future king of the house",
+                "https://cdn2.thecatapi.com/images/d5q.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.ExoticShorthair,
+                "Misty",
+                "Mysterious wanderer",
+                "https://cdn2.thecatapi.com/images/6s9.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.BalineseJavanese,
+                "Oscar",
+                "Gourmet food critic",
+                "https://cdn2.thecatapi.com/images/3k8.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.AmericanCurl,
+                "Bella",
+                "Elegant and graceful",
+                "https://cdn2.thecatapi.com/images/4r2.jpg"
+            ),
+            CatModel(
+                Gender.Unknown,
+                CatBreed.ExoticShorthair,
+                "Shadow",
+                "Master of stealth",
+                "https://cdn2.thecatapi.com/images/1p7.jpg"
+            ),
+
+            CatModel(
+                Gender.Male,
+                CatBreed.AmericanCurl,
+                "Charlie",
+                "Adventure seeker",
+                "https://cdn2.thecatapi.com/images/5f6.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.ExoticShorthair,
+                "Daisy",
+                "Flower lover",
+                "https://cdn2.thecatapi.com/images/8h3.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.BalineseJavanese,
+                "Max",
+                "Speed runner",
+                "https://cdn2.thecatapi.com/images/2k4.jpg"
             )
         )
     }
